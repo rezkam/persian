@@ -1,5 +1,11 @@
 # encoding: utf-8
-
+'''
+persian.py
+A simple library for Persian language localization in Python
+Copyright (C) 2013 Mohammad reza Kamalifard , kamalifard@datasec.ir
+MIT licensed
+https://github.com/itmard/persian.py 
+'''
 def enToPersianNumb(number):
     numPersian = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹','.']
     numEnglish = ['0','1','2','3','4','5','6','7','8','9','.']
@@ -34,15 +40,3 @@ def replaceing(host, dest, input):
             returnList.append(i)
     
     return ''.join(returnList)
- 
-
-print enToPersianNumb('شماره کلاس 312')
-print enToPersianNumb(3123123.9012)
-print enToPersianNumb(123)
-print enToPersianchar('sghl ]i ofv')
-print arToPersianNumb('٣٤٥٦')
-print arToPersianChar(' ك جمهوري اسلامي ايران')
-
-
-
-
