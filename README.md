@@ -2,6 +2,7 @@ persian.py
 ==========
 
 A simple Python library for Persian language localization.
+Python Version of [Persian.js](https://github.com/itmard/persian.js)
 
 ##How to use
 Simply import 'persian.py' and use the functions.
