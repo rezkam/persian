@@ -2,7 +2,7 @@
 '''
 persian.py
 A simple library for Persian language localization in Python
-Copyright (C) 2013 Mohammad reza Kamalifard , kamalifard@datasec.ir
+Copyright (C) 2013 Mohammad reza Kamalifard (kamalifard@datasec.ir) and other contributors
 MIT licensed
 https://github.com/itmard/persian.py 
 '''

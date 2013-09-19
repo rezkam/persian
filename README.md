@@ -51,6 +51,7 @@ enToPersianchar("لخخلمث")   #returns: google
 ##Contributors
 
 - [Mohammad reza Kamlifard](http://kamalifard.ir/)
+- [Keyvan Hedayati](https://github.com/k1-hedayati)
 
 ##Contributing
 
