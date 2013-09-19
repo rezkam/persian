@@ -24,7 +24,7 @@ def enToPersianNumb(number):
     }
     return multiple_replace(dic, number)
 
-def enToPersianchar(userInput):
+def enToPersianChar(userInput):
     dic = { #Assumes that charaters written with standard persioan keyboard, not windows arabic layout
         'q':'ض',
         'w':'ص',
