@@ -1,8 +1,8 @@
 # encoding: utf-8
-from toPersian import  *
+from persian import  *
 
 print enToPersianNumb('شماره کلاس 312')
-print enToPersianNumb(3123123.9012)
+print enToPersianNumb('3123123.9012')
 print enToPersianNumb(123)
 print enToPersianchar('sghl ]i ofv')
 print arToPersianNumb('٣٤٥٦')

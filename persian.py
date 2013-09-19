@@ -6,37 +6,90 @@ Copyright (C) 2013 Mohammad reza Kamalifard , kamalifard@datasec.ir
 MIT licensed
 https://github.com/itmard/persian.py 
 '''
+import re 
+
 def enToPersianNumb(number):
-    numPersian = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹','.']
-    numEnglish = ['0','1','2','3','4','5','6','7','8','9','.']
-    return replaceing(numEnglish, numPersian, number)
+    dic = {
+        '0':'۰',
+        '1':'۱',
+        '2':'۲',
+        '3':'۳',
+        '4':'۴',
+        '5':'۵',
+        '6':'۶',
+        '7':'۷',
+        '8':'۸',
+        '9':'۹',
+        '.':'.',
+    }
+    return multiple_replace(dic, number)
 
 def enToPersianchar(userInput):
-    charPersian = [ 'ض', 'ص', 'ث', 'ق', 'ف', 'غ', 'ع', 'ه', 'خ', 'ح', 'ج', 'چ', 'ش', 'س', 'ی', 'ب', 'ل', 'ا', 'ت', 'ن', 'م', 'ک', 'گ', 'ظ', 'ط', 'ز', 'ر', 'ذ', 'د', 'پ', 'و','؟' ]
-    charEnglish = [ 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',','?' ]
-    return replaceing(charEnglish, charPersian, userInput)
+    dic = { #Assumes that charaters written with standard persioan keyboard, not windows arabic layout
+        'q':'ض',
+        'w':'ص',
+        'e':'ث', 
+        'r':'ق',
+        't':'ف',
+        'y':'غ',
+        'u':'ع',
+        'i':'ه',
+        'o':'خ',
+        'p':'ح',
+        '[':'ج',
+        ']':'چ',
+        'a':'ش',
+        's':'س',
+        'd':'ی',
+        'f':'ب',
+        'g':'ل',
+        'h':'ا',
+        'j':'ت',
+        'k':'ن',
+        'l':'م',
+        ';':'ک',
+        "'":'گ',
+        'z':'ظ',
+        'x':'ط',
+        'c':'ز',
+        'v':'ر',
+        'b':'ذ',
+        'n':'د',
+        'm':'پ',
+        ',':'و',
+        '?':'؟',
+    }
+    return multiple_replace(dic, userInput)
 
 def arToPersianNumb(number):
-    numArabic = ['١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩', '٠']
-    numPersian = ['۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹', '۰']
-    return replaceing(numArabic, numPersian, number)
+    dic = {
+        '١':'۱',
+        '٢':'۲',
+        '٣':'۳',
+        '٤':'۴',
+        '٥':'۵',
+        '٦':'۶',
+        '٧':'۷',
+        '٨':'۸',
+        '٩':'۹',
+        '٠':'۰',
+    }
+    return multiple_replace(dic, number)
 
 def arToPersianChar(userInput):
-    charArabic = ['ي', 'ك', '‍', 'دِ', 'بِ', 'زِ', 'ذِ', 'ِشِ', 'ِسِ', '‌', 'ى']
-    charPersian = ['ی', 'ک', '', 'د', 'ب', 'ز', 'ذ', 'ش', 'س', '', 'ی']
-    return replaceing(charArabic, charPersian, userInput)
-    
-#list 1 is or  not ok host
-#list 2 is or ok dest
+    dic = {
+        'ك':'ک',
+        'دِ':'د',
+        'بِ':'ب',
+        'زِ':'ز',
+        'ذِ':'ذ',
+        'شِ':'ش',
+        'سِ':'س',
+        'ى':'ی',
+        'ي':'ی'
+    }
+    return multiple_replace(dic, userInput)
 
-def replaceing(host, dest, input):
-    
-    returnList = list()
-
-    for i in list(unicode(input)):
-        if i in host:
-            returnList.append(dest[host.index(i)])
-        else:
-            returnList.append(i)
-    
-    return ''.join(returnList)
+def multiple_replace(dic, text): 
+    pattern = "|".join(map(re.escape, dic.keys()))
+    return re.sub(pattern, lambda m: dic[m.group()], str(text)) 
