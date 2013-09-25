@@ -15,7 +15,7 @@ def enToPersianNumb(number):
 def enToPersianchar(userInput):
     charPersian = [ 'ض', 'ص', 'ث', 'ق', 'ف', 'غ', 'ع', 'ه', 'خ', 'ح', 'ج', 'چ', 'ش', 'س', 'ی', 'ب', 'ل', 'ا', 'ت', 'ن', 'م', 'ک', 'گ', 'ظ', 'ط', 'ز', 'ر', 'ذ', 'د', 'پ', 'و','؟' ]
     charEnglish = [ 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',','?' ]
-    dictionary = dict(zip(char(charEnglish),charPersian)
+    dictionary = dict(zip(charEnglish),charPersian)
     return replaceing(charEnglish, charPersian, userInput)
 
 def arToPersianNumb(number):
