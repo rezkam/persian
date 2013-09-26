@@ -36,6 +36,5 @@ def arToPersianChar(userInput):
 def replaceing(input,dictionary):
     
     for i in dictionary:
-        transed = input.replace(i,dictionary[i])
-        input = transed
+        input = input.replace(i,dictionary[i])
     return input
