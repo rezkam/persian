@@ -5,8 +5,7 @@ A simple Python library for Persian language localization.
 Python Version of [Persian.js](https://github.com/itmard/persian.js)
 
 ##How to use
-Simply import 'persian.py' and use the functions.
-
+import persian
 ##Functions
 
 ###1) Convert to Persian characters
@@ -16,7 +15,7 @@ Used for converting Arabic characters to Persian.
 Example:
 
 ```python
-arToPersianChar("علي")  #returns: علی
+persian.arToPersianChar("علي")  #returns: علی
 ````
 
 ###2) Convert to Persian numbers from Arabic Number
@@ -26,7 +25,7 @@ Used for converting Arabic numbers to Persian.
 Example:
 
 ```python
-arToPersianNumb("٣٤٥")  #returns: ۳۴۵
+persian.arToPersianNumb("٣٤٥")  #returns: ۳۴۵
 ````
 ###3) Convert to Persian numbers from English Number
 ----------
@@ -35,7 +34,7 @@ Used for converting English numbers to Persian.
 Example:
 
 ```python
-enToPersianNumb("345")  #returns: ۳۴۵
+persian.enToPersianNumb("345")  #returns: ۳۴۵
 ````
 
 ###4) Change keyboard layout
@@ -46,7 +45,7 @@ Example:
 
 ```python
 
-enToPersianchar("لخخلمث")   #returns: google
+persian.enToPersianchar("لخخلمث")   #returns: google
 ````
 ##Contributors
 
