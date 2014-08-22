@@ -1,62 +1,74 @@
-persian.py
+Persian.py
 ==========
 
 A simple Python library for Persian language localization.
 Python Version of [Persian.js](https://github.com/itmard/persian.js)
 
-##How to use
+###Install Package
+```
+pip install persian
+```
+###How to use
+```
 import persian
-##Functions
+```
+###Functions
 
-###1) Convert to Persian characters
-----------
-Used for converting Arabic characters to Persian.
+#### Convert to Persian characters
+Converting Arabic characters to Persian.
 
 Example:
-
 ```python
 persian.arToPersianChar("علي")  #returns: علی
-````
+```
 
-###2) Convert to Persian numbers from Arabic Number
 ----------
-Used for converting Arabic numbers to Persian.
+
+####Convert to Persian numbers from Arabic Number
+
+Converting Arabic numbers to Persian.
 
 Example:
 
 ```python
 persian.arToPersianNumb("٣٤٥")  #returns: ۳۴۵
-````
-###3) Convert to Persian numbers from English Number
-----------
-Used for converting English numbers to Persian.
+```
+
+---------
+
+####Convert to Persian numbers from English Number
+Converting English numbers to Persian.
 
 Example:
 
 ```python
 persian.enToPersianNumb("345")  #returns: ۳۴۵
-````
+```
 
-###4) Change keyboard layout
 ----------
-Used for converting Persian char to English char.
+
+#### Change keyboard layout
+Converting Persian char to English char.
 
 Example:
 
 ```python
 
 persian.enToPersianchar("لخخلمث")   #returns: google
-````
-##Contributors
+```
+
+-------------
+
+###Contributors
 
 - [Mohammad reza Kamlifard](http://kamalifard.ir/)
 - [Keyvan Hedayati](https://github.com/k1-hedayati)
 
-##Contributing
+###Contributing
 
 This is a open-source project. Fork the project, complete the code and send pull request.
 
-##License
+###License
 
 The MIT License (MIT)
 
