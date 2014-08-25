@@ -24,7 +24,25 @@ def enToPersianNumb(number):
     }
     return multiple_replace(dic, number)
 
+def faToEnglishNumb(number):
+    dic = {
+        '۰':'0',
+        '۱':'1',
+        '۲':'2',
+        '۳':'3',
+        '۴':'4',
+        '۵':'5',
+        '۶':'6',
+        '۷':'7',
+        '۸':'8',
+        '۹':'9',
+        '.':'.',
+    }
+    return multiple_replace(dic, number)
+
 def enToPersianChar(userInput):
+    # 1. There are several Keyboard Layouts.
+    # 2. Chars like آ, ٔ, ،, etc. are not available in this function
     dic = { #Assumes that charaters written with standard persioan keyboard, not windows arabic layout
         'q':'ض',
         'w':'ص',
