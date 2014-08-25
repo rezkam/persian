@@ -5,13 +5,17 @@ A simple Python library for Persian language localization.
 Python Version of [Persian.js](https://github.com/itmard/persian.js)
 
 ###Install Package
+
 ```
 pip install persian
 ```
+
 ###How to use
+
 ```
 import persian
 ```
+
 ###Functions
 
 #### Convert to Persian characters
@@ -32,8 +36,8 @@ Example:
 persian.arToPersianNumb("٣٤٥")  #returns: ۳۴۵
 ```
 
-
 ####Convert to Persian numbers from English Number
+
 Converting English numbers to Persian.
 
 Example:
@@ -42,9 +46,18 @@ Example:
 persian.enToPersianNumb("345")  #returns: ۳۴۵
 ```
 
+####Convert to English numbers from Persian Number
 
+Converting Persian numbers to English.
+
+Example:
+
+```
+persian.faToEnglishNumb("۳۴۵")  #returns: 345
+```
 
 #### Change keyboard layout
+
 Converting Persian char to English char.
 
 Example:
@@ -53,16 +66,15 @@ Example:
 persian.enToPersianchar("لخخلمث")   #returns: google
 ```
 
-
-
 ###Contributors
 
 - [Mohammad reza Kamlifard](http://kamalifard.ir/)
 - [Keyvan Hedayati](https://github.com/k1-hedayati)
+- [Mohammad Hossein Mojtahedi](https://github.com/mhm5000)
 
 ###Contributing
 
-This is a open-source project. Fork the project, complete the code and send pull request.
+This is an open-source project. Fork the project, complete the code and send pull request.
 
 ###License
 
