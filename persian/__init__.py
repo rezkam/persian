@@ -41,8 +41,6 @@ def faToEnglishNumb(number):
     return multiple_replace(dic, number)
 
 def enToPersianChar(userInput):
-    # 1. There are several Keyboard Layouts.
-    # 2. Chars like آ, ٔ, ،, etc. are not available in this function
     dic = { #Assumes that charaters written with standard persioan keyboard, not windows arabic layout
         'q':'ض',
         'w':'ص',
