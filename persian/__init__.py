@@ -6,7 +6,7 @@ Copyright (C) 2013 Mohammad reza Kamalifard (kamalifard@datasec.ir) and other co
 MIT licensed
 https://github.com/itmard/persian.py 
 '''
-import re 
+import re ,sys
 
 def enToPersianNumb(number):
     dic = {
