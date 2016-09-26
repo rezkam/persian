@@ -53,7 +53,17 @@ Example:
 persian.enToPersianchar("لخخلمث")   #returns: google
 ```
 
+#### Simple letter substitution cipher
+Replaces a letter with the letter 16 letters after it in the alphabet.
 
+Example:
+
+```
+persian.rot16('صذچضص')  # returns: 'الفبا'
+
+```
+And `rot5()` also replace digits.
+Finnaly `rot21()` replace both.
 
 ###Contributors
 
