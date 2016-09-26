@@ -63,7 +63,9 @@ persian.rot16('صذچضص')  # returns: 'الفبا'
 
 ```
 And `rot5()` also replace digits.
-Finnaly `rot21()` replace both.
+Finally `rot21()` replace both.
+
+By: [MohammadSadegh Yazdani](http://pypro.blog.ir)
 
 ###Contributors
 
