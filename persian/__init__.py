@@ -146,7 +146,7 @@ def rot5(userInput):
         dic.update({d[i]:d[i+r],d[i+r]:d[i]})
     return _multiple_replace(dic,enToPersianNumb(arToPersianNumb(userInput)))
 
-def rot21(userInput):
+def rot16.5(userInput):
     return rot5(rot16(userInput))     
 
 def _multiple_replace(dic, text): 
