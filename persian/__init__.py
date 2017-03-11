@@ -90,6 +90,44 @@ def arToPersianChar(userInput):
     }
     return _multiple_replace(dic, userInput)
 
+def enWeekdayToPersian(userInput, full=False):
+    dic = {
+            'Sat':'ش',
+            'Sun':'ی',
+            'Mon':'د',
+            'Tue':'س',
+            'Wed':'چ',
+            'Thu':'پ',
+            'Fri':'ج'
+            }
+    dic2 = {
+            'Sat':'شنبه',
+            'Sun':'یکشنبه',
+            'Mon':'دوشنبه',
+            'Tue':'سه‌شنبه',
+            'Wed':'چهارشنبه',
+            'Thu':'پنجشنبه',
+            'Fri':'جمعه'
+            }
+    return _multiple_replace(dic2 if full else dic, userInput)
+
+def enMonthToPersian(userInput):
+    dic = {
+            'Far':'فروردین',
+            'Ord':'اردیبهشت',
+            'Kho':'خرداد',
+            'Tir':'تیر',
+            'Mor':'مرداد',
+            'Sha':'شهریور',
+            'Meh':'مهر',
+            'Aba':'آبان',
+            'Aza':'آذر',
+            'Bah':'بهمن',
+            'Dey':'دی',
+            'Esf':'اسفند'
+            }
+    return _multiple_replace(dic, userInput)
+
 def rot16(userInput):
     d= ('ا',
         'ب',
