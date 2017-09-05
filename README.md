@@ -6,7 +6,7 @@ Python Version of [Persian.js](https://github.com/itmard/persian.js)
 
 ###Install Package
 ```
-pip3 install persian
+pip install persian
 ```
 ###How to use
 ```
