@@ -22,7 +22,7 @@ def enToPersianNumb(number):
         '9':'۹',
         '.':'.',
     }
-    return multiple_replace(dic, number)
+    return _multiple_replace(dic, number)
 
 def enToPersianChar(userInput):
     dic = { #Assumes that charaters written with standard persian keyboard, not windows arabic layout
@@ -59,7 +59,7 @@ def enToPersianChar(userInput):
         ',':'و',
         '?':'؟',
     }
-    return multiple_replace(dic, userInput)
+    return _multiple_replace(dic, userInput)
 
 def arToPersianNumb(number):
     dic = {
@@ -74,7 +74,7 @@ def arToPersianNumb(number):
         '٩':'۹',
         '٠':'۰',
     }
-    return multiple_replace(dic, number)
+    return _multiple_replace(dic, number)
 
 def arToPersianChar(userInput):
     dic = {
@@ -88,8 +88,105 @@ def arToPersianChar(userInput):
         'ى':'ی',
         'ي':'ی'
     }
-    return multiple_replace(dic, userInput)
+    return _multiple_replace(dic, userInput)
 
-def multiple_replace(dic, text): 
+def enWeekdayToPersian(userInput, full=False):
+    dic = {
+            'Sat':'ش',
+            'Sun':'ی',
+            'Mon':'د',
+            'Tue':'س',
+            'Wed':'چ',
+            'Thu':'پ',
+            'Fri':'ج'
+            }
+    dic2 = {
+            'Sat':'شنبه',
+            'Sun':'یکشنبه',
+            'Mon':'دوشنبه',
+            'Tue':'سه‌شنبه',
+            'Wed':'چهارشنبه',
+            'Thu':'پنجشنبه',
+            'Fri':'جمعه'
+            }
+    return _multiple_replace(dic2 if full else dic, userInput)
+
+def enMonthToPersian(userInput):
+    dic = {
+            'Far':'فروردین',
+            'Ord':'اردیبهشت',
+            'Kho':'خرداد',
+            'Tir':'تیر',
+            'Mor':'مرداد',
+            'Sha':'شهریور',
+            'Meh':'مهر',
+            'Aba':'آبان',
+            'Aza':'آذر',
+            'Bah':'بهمن',
+            'Dey':'دی',
+            'Esf':'اسفند'
+            }
+    return _multiple_replace(dic, userInput)
+
+def rot16(userInput):
+    d= ('ا',
+        'ب',
+        'پ',
+        'ت',
+        'ث',
+        'ج',
+        'چ',
+        'ح',
+        'خ',
+        'د',
+        'ذ',
+        'ر',
+        'ز',
+        'ژ',
+        'س',
+        'ش',
+        'ص',
+        'ض',
+        'ط',
+        'ظ',
+        'ع',
+        'غ',
+        'ف',
+        'ق',
+        'ک',
+        'گ',
+        'ل',
+        'م',
+        'ن',
+        'و',
+        'ه',
+        'ی')
+    r = int(len(d)/2)
+    dic = {}
+    for i in range(r):
+        dic.update({d[i]:d[i+r],d[i+r]:d[i]})
+    return _multiple_replace(dic,(arToPersianChar(userInput)))
+
+def rot5(userInput):
+    d=('۰',
+       '۱',
+       '۲',
+       '۳',
+       '۴',
+       '۵',
+       '۶',
+       '۷',
+       '۸',
+       '۹')
+    r = int(len(d)/2)
+    dic = {}
+    for i in range(r):
+        dic.update({d[i]:d[i+r],d[i+r]:d[i]})
+    return _multiple_replace(dic,enToPersianNumb(arToPersianNumb(userInput)))
+
+def rot21(userInput):
+    return rot5(rot16(userInput))     
+
+def _multiple_replace(dic, text): 
     pattern = "|".join(map(re.escape, dic.keys()))
     return re.sub(pattern, lambda m: dic[m.group()], str(text)) 

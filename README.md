@@ -53,7 +53,19 @@ Example:
 persian.enToPersianchar("sghl")   #returns: سلام
 ```
 
+#### Simple letter substitution cipher
+Replaces a letter with the letter 16 letters after it in the alphabet.
 
+Example:
+
+```
+persian.rot16('صذچضص')  # returns: 'الفبا'
+
+```
+And `rot5()` also replace digits.
+Finally `rot21()` replace both.
+
+By: [MohammadSadegh Yazdani](http://pypro.blog.ir)
 
 ###Contributors
 
