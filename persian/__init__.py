@@ -1,26 +1,48 @@
 # encoding: utf-8
 '''
 persian.py
-A simple library for Persian language localization in Python
-Copyright (C) 2013 Mohammad reza Kamalifard (kamalifard@datasec.ir) and other contributors
-MIT licensed
+A mature Python library for convert Arabic/English numbers and characters to Persian and vice versa
 https://github.com/itmard/persian.py 
 '''
 import re 
 
 def enToPersianNumb(number):
     dic = {
-        '0':'۰',
-        '1':'۱',
-        '2':'۲',
-        '3':'۳',
-        '4':'۴',
-        '5':'۵',
-        '6':'۶',
-        '7':'۷',
-        '8':'۸',
-        '9':'۹',
-        '.':'.',
+        '0': '۰',
+        '1': '۱',
+        '2': '۲',
+        '3': '۳',
+        '4': '۴',
+        '5': '۵',
+        '6': '۶',
+        '7': '۷',
+        '8': '۸',
+        '9': '۹',
+        '.': '.',
+    }
+    return multiple_replace(dic, number)
+
+def persianToEngNumb(number):
+    '''
+    Get persian numbers and return english numbers as result
+    
+    number -- Persian numbers
+
+    returns:
+        English numbers
+    '''
+    dic = {
+        '۰': '0',
+        '۱': '1',
+        '۲': '2',
+        '۳': '3',
+        '۴': '4',
+        '۵': '5',
+        '۶': '6',
+        '۷': '7',
+        '۸': '8',
+        '۹': '9',
+        '.': '.',
     }
     return multiple_replace(dic, number)
 
