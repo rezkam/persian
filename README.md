@@ -4,19 +4,19 @@ Persian.py
 A simple Python library for Persian language localization.
 Python Version of [Persian.js](https://github.com/itmard/persian.js)
 
-###Install Package
+### Install Package
 
 ```
 pip install persian
 ```
 
-###How to use
+### How to use
 
 ```
 import persian
 ```
 
-###Functions
+### Functions
 
 #### Convert to Persian characters
 Converting Arabic characters to Persian.
@@ -26,7 +26,7 @@ Example:
 persian.arToPersianChar("علي")  #returns: علی
 ```
 
-####Convert to Persian numbers from Arabic Number
+#### Convert to Persian numbers from Arabic Number
 
 Converting Arabic numbers to Persian.
 
@@ -36,7 +36,7 @@ Example:
 persian.arToPersianNumb("٣٤٥")  #returns: ۳۴۵
 ```
 
-####Convert to Persian numbers from English Number
+#### Convert to Persian numbers from English Number
 
 Converting English numbers to Persian.
 
@@ -46,7 +46,7 @@ Example:
 persian.enToPersianNumb("345")  #returns: ۳۴۵
 ```
 
-####Convert to English numbers from Persian Number
+#### Convert to English numbers from Persian Number
 
 Converting Persian numbers to English.
 
@@ -66,17 +66,17 @@ Example:
 persian.enToPersianchar("لخخلمث")   #returns: google
 ```
 
-###Contributors
+### Contributors
 
 - [Mohammad reza Kamlifard](http://kamalifard.ir/)
 - [Keyvan Hedayati](https://github.com/k1-hedayati)
 - [Mohammad Hossein Mojtahedi](https://github.com/mhm5000)
 
-###Contributing
+### Contributing
 
 This is an open-source project. Fork the project, complete the code and send pull request.
 
-###License
+### License
 
 The MIT License (MIT)
 
