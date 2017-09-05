@@ -50,7 +50,7 @@ Converting Persian char to English char.
 Example:
 
 ```
-persian.enToPersianchar("لخخلمث")   #returns: google
+persian.enToPersianchar("sghl")   #returns: سلام
 ```
 
 
