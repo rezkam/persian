@@ -2,56 +2,60 @@ Persian.py
 ==========
 
 A simple Python library for Persian language localization.
-Python Version of [Persian.js](https://github.com/itmard/persian.js)
 
-###Install Package
+[![Build Status](https://travis-ci.org/itmard/Persian.png?branch=master)](https://travis-ci.org/itmard/Persian)
+
+Python package like [Persian.js](https://github.com/usablica/persian.js)
+
+### Install Package
 ```
 pip install persian
 ```
-###How to use
+### How to use
 ```
 import persian
 ```
-###Functions
+### Functions
 
 #### Convert to Persian characters
 Converting Arabic characters to Persian.
 
 Example:
 ```
-persian.arToPersianChar("علي")  #returns: علی
+persian.convert_ar_characters("علي")  #returns: علی
 ```
 
-####Convert to Persian numbers from Arabic Number
+#### Convert to Persian numbers from Arabic Number
 
 Converting Arabic numbers to Persian.
 
 Example:
 
 ```
-persian.arToPersianNumb("٣٤٥")  #returns: ۳۴۵
+persian.convert_ar_numbers("٣٤٥")  #returns: ۳۴۵
 ```
 
 
 
-####Convert Persian numbers to english numbers
-Convert Persian numbers to english numbers
+#### Convert Persian numbers to English numbers
+
+Converting Persian numbers to English numbers
 
 Example:
 
 ```
-persian.persianToEngNumb("۱۳۷۱")  #returns: 1371
+persian.convert_fa_numbers("۱۳۷۱")  #returns: 1371
 ```
 
 
 
-####Convert to Persian numbers from English Number
+#### Convert to Persian numbers from English Number
 Converting English numbers to Persian.
 
 Example:
 
 ```
-persian.enToPersianNumb("345")  #returns: ۳۴۵
+persian.convert_en_numbers("345")  #returns: ۳۴۵
 ```
 
 
@@ -62,17 +66,17 @@ Converting Persian char to English char.
 Example:
 
 ```
-persian.enToPersianchar("لخخلمث")   #returns: google
+persian.convert_en_characters("sghl")   #returns: سلام
 ```
 
 
 
-###Contributors
+### Contributors
 
 - [Mohammad reza Kamlifard](http://kamalifard.ir/)
 - [Keyvan Hedayati](https://github.com/k1-hedayati)
 - [Bahram Aghaei](https://github.com/GreatBahram)
 
-###Contributing
+### Contributing
 
 This is a open-source project. Fork the project, complete the code and send pull request.
