@@ -1,4 +1,4 @@
-Persian.py
+Persian
 ==========
 
 A simple Python library for Persian language localization.
