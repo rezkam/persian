@@ -2,7 +2,8 @@ Persian.py
 ==========
 
 A simple Python library for Persian language localization.
-Python Version of [Persian.js](https://github.com/itmard/persian.js)
+
+Python package like [Persian.js](https://github.com/usablica/persian.js)
 
 ###Install Package
 ```
@@ -19,7 +20,7 @@ Converting Arabic characters to Persian.
 
 Example:
 ```
-persian.arToPersianChar("علي")  #returns: علی
+persian.convert_ar_characters("علي")  #returns: علی
 ```
 
 ####Convert to Persian numbers from Arabic Number
@@ -29,7 +30,7 @@ Converting Arabic numbers to Persian.
 Example:
 
 ```
-persian.arToPersianNumb("٣٤٥")  #returns: ۳۴۵
+persian.convert_ar_numbers("٣٤٥")  #returns: ۳۴۵
 ```
 
 
@@ -39,7 +40,7 @@ Converting English numbers to Persian.
 Example:
 
 ```
-persian.enToPersianNumb("345")  #returns: ۳۴۵
+persian.convert_en_numbers("345")  #returns: ۳۴۵
 ```
 
 
@@ -50,7 +51,7 @@ Converting Persian char to English char.
 Example:
 
 ```
-persian.enToPersianchar("sghl")   #returns: سلام
+persian.convert_en_characters("sghl")   #returns: سلام
 ```
 
 
@@ -63,23 +64,3 @@ persian.enToPersianchar("sghl")   #returns: سلام
 ###Contributing
 
 This is a open-source project. Fork the project, complete the code and send pull request.
-
-###License
-
-The MIT License (MIT)
-
-Copyright (c) 2013 Mohammad reza Kamalifard
-
-    
-    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
-    documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
-    the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
-    and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-    The above copyright notice and this permission notice shall be included in all copies or substantial portions 
-    of the Software.
-    
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED 
-    TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
-    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
-    CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
-    IN THE SOFTWARE.
