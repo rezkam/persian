@@ -99,6 +99,31 @@ def convert_ar_numbers(input_str):
     return _multiple_replace(mapping, input_str)
 
 
+def convert_fa_numbers(input_str):
+    """
+    This function convert Persian numbers to English numbers.
+    
+    Keyword arguments:
+    input_str -- It should be string
+
+    Returns: English numbers
+    """
+    mapping = {
+        '۰': '0',
+        '۱': '1',
+        '۲': '2',
+        '۳': '3',
+        '۴': '4',
+        '۵': '5',
+        '۶': '6',
+        '۷': '7',
+        '۸': '8',
+        '۹': '9',
+        '.': '.',
+    }
+    return _multiple_replace(mapping, input_str)
+
+
 def convert_ar_characters(input_str):
     """
     Converts Arabic chars to related Persian unicode char
