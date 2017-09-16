@@ -22,3 +22,9 @@ class TestArabic(unittest.TestCase):
     def test_convert_arabic_chars(self):
         self.assertEqual("کدبزذشسیی",
                          persian.convert_ar_characters("كدبزذشسىي"))
+
+
+class TestPersian(unittest.TestCase):
+    def test_convert_fa_numbers(self):
+        self.assertEqual("1234567890",
+                         persian.convert_fa_numbers("۱۲۳۴۵۶۷۸۹۰"))
