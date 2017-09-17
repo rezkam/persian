@@ -76,7 +76,12 @@ persian.convert_en_characters("sghl")   #returns: سلام
 - [Mohammad reza Kamlifard](http://kamalifard.ir/)
 - [Keyvan Hedayati](https://github.com/k1-hedayati)
 - [Bahram Aghaei](https://github.com/GreatBahram)
+- [Hasan Ramezani](https://github.com/hramezani)
 
 ### Contributing
 
 This is a open-source project. Fork the project, complete the code and send pull request.
+
+### Run tests
+- ```python setup.py test```
+- ```python -m unittest test/test_persian.py```

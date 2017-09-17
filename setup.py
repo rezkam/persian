@@ -19,4 +19,5 @@ setup(
         "Operating System :: OS Independent",
         "Intended Audience :: Developers",
     ],
+    test_suite='test',
 )
