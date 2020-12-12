@@ -3,7 +3,7 @@ Persian
 
 A simple Python library for Persian language localization.
 
-[![Build Status](https://travis-ci.org/itmard/Persian.png?branch=master)](https://travis-ci.org/itmard/Persian)
+[![Tests](https://github.com/rezakamalifard/Persian/workflows/tests/badge.svg)](https://github.com/rezakamalifard/Persian/actions)
 
 Python package like [Persian.js](https://github.com/usablica/persian.js)
 
