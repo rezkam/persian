@@ -1,23 +1,24 @@
-from setuptools import setup
+import setuptools
 
-setup(
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
     name="persian",
-    version="0.4.0",
-    author="Mohammad Reza Kamalifard",
+    version="0.5.0",
+    author="Reza Kamalifard",
     author_email="mrkamalifard@gmail.com",
-    description=("Simple Python library for Persian language localization"),
+    description="Simple Python library for Persian language localization",
     license="Apache License 2.0",
     keywords="example documentation tutorial",
-    url="https://github.com/itmard/Persian",
+    url="https://github.com/rezakamalifard/Persian",
     packages=['persian'],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Topic :: Utilities",
-        "License :: OSI Approved :: Apache Software License",
-        "Programming Language :: Python"
+        "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
         "Intended Audience :: Developers",
     ],
-    test_suite='test',
 )
