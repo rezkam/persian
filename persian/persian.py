@@ -3,7 +3,7 @@
 """
 Persian
 Simple tool for Persian language localization in Python
-Copyright (C) 2017 Mohammad Reza Kamalifard (mrkamalifard@gmail.com)
+Copyright (C) 2017-2020 Reza Kamalifard (mrkamalifard@gmail.com) and others
 @rezakamalifard
 MIT licensed
 https://github.com/itmard/Persian
