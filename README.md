@@ -5,83 +5,68 @@ A simple Python library for Persian language localization.
 
 [![Tests](https://github.com/rezakamalifard/Persian/workflows/tests/badge.svg)](https://github.com/rezakamalifard/Persian/actions)
 
-Python package like [Persian.js](https://github.com/usablica/persian.js)
+Python implementation of [Persian.js](https://github.com/usablica/persian.js)
 
-### Install Package
-```
+## Installation
+```bash
 pip install persian
 ```
-### How to use
-```
-import persian
-```
-### Functions
 
-#### Convert to Persian characters
-Converting Arabic characters to Persian.
+## Functions
+
+### Convert to Persian characters
+Used for converting Arabic characters to Persian.
 
 Example:
-```
+```python
 persian.convert_ar_characters("علي")  #returns: علی
 ```
 
-#### Convert to Persian numbers from Arabic Number
-
-Converting Arabic numbers to Persian.
+### Convert to English numbers from Persian Number
+Used for converting Persian numbers to English.
 
 Example:
 
+```python
+persian.convert_fa_numbers("۱۳۷۱")  #returns: 1371
 ```
+
+### Convert to Persian numbers from Arabic Number
+Used for converting Arabic numbers to Persian.
+
+Example:
+
+```python
 persian.convert_ar_numbers("٣٤٥")  #returns: ۳۴۵
 ```
 
 
-
-#### Convert Persian numbers to English numbers
-
-Converting Persian numbers to English numbers
+### Convert to Persian numbers from English Number
+Used for converting English numbers to Persian.
 
 Example:
 
-```
-persian.convert_fa_numbers("۱۳۷۱")  #returns: 1371
-```
-
-
-
-#### Convert to Persian numbers from English Number
-Converting English numbers to Persian.
-
-Example:
-
-```
+```python
 persian.convert_en_numbers("345")  #returns: ۳۴۵
 ```
 
 
-
-#### Change keyboard layout
-Converting Persian char to English char.
+### Change keyboard layout
+Converting Persian char to English char by switching the keyboard layout
 
 Example:
 
-```
+```python
 persian.convert_en_characters("sghl")   #returns: سلام
 ```
 
+## Contributors
 
-
-### Contributors
-
-- [Mohammad reza Kamlifard](http://kamalifard.ir/)
+- [Reza Kamlifard](https://github.com/rezakamalifard/)
 - [Keyvan Hedayati](https://github.com/k1-hedayati)
 - [Bahram Aghaei](https://github.com/GreatBahram)
 - [Hasan Ramezani](https://github.com/hramezani)
 
-### Contributing
+## Contributing
 
 This is a open-source project. Fork the project, complete the code and send pull request.
-
-### Run tests
-- ```python setup.py test```
-- ```python -m unittest test/test_persian.py```
