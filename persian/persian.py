@@ -144,6 +144,25 @@ def convert_ar_characters(input_str):
     return _multiple_replace(mapping, input_str)
 
 
+def convert_fa_spaces(input_value: str) -> str:
+    """
+    Convert space between Persian MI and De-Yii to zero-width non-joiner (halfspace) char
+    :param input_value: String contains persian chars
+    :return: New string with converted space to half space char
+    """
+
+    # u200C is the code for unicode zwnj character https://en.wikipedia.org/wiki/Zero-width_non-joiner
+    repl = '\\2\u200C\\4'
+    # replace space between persian MI.
+    mi_pattern = r'((\s\u0645\u06CC)+([\s])+([\u0600-\u06EF]{1,}){1,})'
+    result = re.sub(mi_pattern, repl, input_value, 0)
+    # replace space between persian De-Yii.
+    de_yii_pattern = r'(([\u0600-\u06EF]{1,})+([\s])+(ای|ایی|اند|ایم|اید|ام){1})'
+    result = re.sub(de_yii_pattern, repl, result)
+
+    return result
+
+
 def _multiple_replace(mapping, text):
     """
     Internal function for replace all mapping keys for a input string

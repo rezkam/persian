@@ -26,5 +26,8 @@ class TestArabic(unittest.TestCase):
 
 class TestPersian(unittest.TestCase):
     def test_convert_fa_numbers(self):
-        self.assertEqual("1234567890",
-                         persian.convert_fa_numbers("۱۲۳۴۵۶۷۸۹۰"))
+        self.assertEqual("1234567890", persian.convert_fa_numbers("۱۲۳۴۵۶۷۸۹۰"))
+
+    def test_remove_halfspace(self):
+        self.assertEqual('آمده‌ای ولی من رفته‌ام و می‌آییم', persian.convert_fa_spaces(
+            'آمده ای ولی من رفته ام و می آییم'))

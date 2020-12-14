@@ -60,6 +60,13 @@ Example:
 persian.convert_en_characters("sghl")   #returns: سلام
 ```
 
+### Zero-width non-joiner correction
+
+Example:
+```python
+persian.convert_en_characters("آمده ای ولی من رفته ام و می آییم")   #returns: آمده‌ای ولی من رفته‌ام و می‌آییم
+```
+
 ## Contributors
 
 - [Reza Kamlifard](https://github.com/rezakamalifard/)
