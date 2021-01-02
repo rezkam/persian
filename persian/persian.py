@@ -163,6 +163,25 @@ def convert_fa_spaces(input_value: str) -> str:
     return result
 
 
+def convert_en_days(input_str):
+    """
+    Converts English day name to Persian
+    :param input_str: String contains English day name
+    :return: New string with Persian day name
+    """
+    lower_input_str = input_str.lower()
+    mapping = {
+        'saturday': 'شنبه',
+        'sunday': 'یکشنبه',
+        'monday': 'دوشنبه',
+        'tuesday': 'سه‌شنبه',
+        'wednesday': 'چهارشنبه',
+        'thursday': 'پنجشنبه',
+        'friday': 'جمعه',
+    }
+    return _multiple_replace(mapping, lower_input_str)
+
+
 def _multiple_replace(mapping, text):
     """
     Internal function for replace all mapping keys for a input string
