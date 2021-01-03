@@ -10,6 +10,7 @@ https://github.com/itmard/Persian
 """
 
 import re
+import urllib.parse
 
 
 def convert_en_numbers(input_str):
@@ -163,23 +164,13 @@ def convert_fa_spaces(input_value: str) -> str:
     return result
 
 
-def convert_en_days(input_str):
+def decode_url(input_str):
     """
-    Converts English day name to Persian
-    :param input_str: String contains English day name
-    :return: New string with Persian day name
+    Decode Persian charachters in URL
+    :param input_str: String contains encoded URL
+    :return: New string with decoded URL
     """
-    lower_input_str = input_str.lower()
-    mapping = {
-        'saturday': 'شنبه',
-        'sunday': 'یکشنبه',
-        'monday': 'دوشنبه',
-        'tuesday': 'سه‌شنبه',
-        'wednesday': 'چهارشنبه',
-        'thursday': 'پنجشنبه',
-        'friday': 'جمعه',
-    }
-    return _multiple_replace(mapping, lower_input_str)
+    return urllib.parse.unquote(input_str)
 
 
 def _multiple_replace(mapping, text):
