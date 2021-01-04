@@ -13,6 +13,10 @@ class TestEnglish(unittest.TestCase):
                          persian.convert_en_characters(
                              "qwertyuiop[]';lkjhgfdsazxcvbnm,./?"))
 
+    def test_decode_url(self):
+        self.assertEqual("https://fa.wikipedia.org/wiki/صفحهٔ_اصلی",
+                         persian.decode_url("https://fa.wikipedia.org/wiki/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C"))
+
 
 class TestArabic(unittest.TestCase):
     def test_convert_arabic_numbers(self):
