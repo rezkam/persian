@@ -10,6 +10,7 @@ https://github.com/itmard/Persian
 """
 
 import re
+import urllib.parse
 
 
 def convert_en_numbers(input_str):
@@ -161,6 +162,15 @@ def convert_fa_spaces(input_value: str) -> str:
     result = re.sub(de_yii_pattern, repl, result)
 
     return result
+
+
+def decode_url(input_str):
+    """
+    Decode Persian charachters in URL
+    :param input_str: String contains encoded URL
+    :return: New string with decoded URL
+    """
+    return urllib.parse.unquote(input_str)
 
 
 def _multiple_replace(mapping, text):
