@@ -21,7 +21,7 @@ Used for converting Arabic characters to Persian.
 Example:
 
 ```python
-persian.convert_ar_characters("علي")  #returns: علی
+persian.convert_ar_characters("علي")  # returns: علی
 ```
 
 ### Convert to English numbers from Persian Number
@@ -31,7 +31,7 @@ Used for converting Persian numbers to English.
 Example:
 
 ```python
-persian.convert_fa_numbers("۱۳۷۱")  #returns: 1371
+persian.convert_fa_numbers("۱۳۷۱")  # returns: 1371
 ```
 
 ### Convert to Persian numbers from Arabic Number
@@ -61,7 +61,7 @@ Converting Persian char to English char by switching the keyboard layout
 Example:
 
 ```python
-persian.convert_en_characters("sghl")   #returns: سلام
+persian.convert_en_characters("sghl")  # returns: سلام
 ```
 
 ### Zero-width non-joiner correction
@@ -69,7 +69,7 @@ persian.convert_en_characters("sghl")   #returns: سلام
 Example:
 
 ```python
-persian.convert_en_characters("آمده ای ولی من رفته ام و می آییم")   #returns: آمده‌ای ولی من رفته‌ام و می‌آییم
+persian.convert_en_characters("آمده ای ولی من رفته ام و می آییم")  #returns: آمده‌ای ولی من رفته‌ام و می‌آییم
 ```
 
 ### Decode Percent-encoding Characters in URLs
@@ -77,7 +77,17 @@ persian.convert_en_characters("آمده ای ولی من رفته ام و می �
 Example:
 
 ```python
-persian.decode_url("https://fa.wikipedia.org/wiki/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C")   #returns: https://fa.wikipedia.org/wiki/صفحهٔ_اصلی
+persian.decode_url(
+    "https://fa.wikipedia.org/wiki/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C")  #returns: https://fa.wikipedia.org/wiki/صفحهٔ_اصلی
+```
+
+### Encode non-ASCII Characters in URLs
+
+Example:
+
+```python
+persian.encode_url("https://fa.wikipedia.org/wiki/۱۹۸۴_(رمان)")  
+# returns: https://fa.wikipedia.org/wiki/%DB%B1%DB%B9%DB%B8%DB%B4_%28%D8%B1%D9%85%D8%A7%D9%86%29
 ```
 
 ## Contributors
