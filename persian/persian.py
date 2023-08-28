@@ -166,11 +166,19 @@ def convert_fa_spaces(input_value: str) -> str:
 
 def decode_url(input_str):
     """
-    Decode Persian charachters in URL
+    Decode Persian characters in URL
     :param input_str: String contains encoded URL
     :return: New string with decoded URL
     """
     return urllib.parse.unquote(input_str)
+
+def encode_url(input_str):
+    """
+    Encode non-ASCII characters in URL
+    :param input_str: String contains decoded URL
+    :return: New string with encoded URL
+    """
+    return urllib.parse.quote(input_str, safe="/:")
 
 
 def _multiple_replace(mapping, text):
