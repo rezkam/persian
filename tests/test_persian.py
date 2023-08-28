@@ -15,7 +15,8 @@ class TestEnglish(unittest.TestCase):
 
     def test_decode_url(self):
         self.assertEqual("https://fa.wikipedia.org/wiki/صفحهٔ_اصلی",
-                         persian.decode_url("https://fa.wikipedia.org/wiki/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C"))
+                         persian.decode_url(
+                             "https://fa.wikipedia.org/wiki/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C"))
 
 
 class TestArabic(unittest.TestCase):
@@ -35,3 +36,7 @@ class TestPersian(unittest.TestCase):
     def test_remove_halfspace(self):
         self.assertEqual('آمده‌ای ولی من رفته‌ام و می‌آییم', persian.convert_fa_spaces(
             'آمده ای ولی من رفته ام و می آییم'))
+
+    def test_encode_url(self):
+        self.assertEqual("https://fa.wikipedia.org/wiki/%DB%B1%DB%B9%DB%B8%DB%B4_%28%D8%B1%D9%85%D8%A7%D9%86%29",
+                         persian.encode_url("https://fa.wikipedia.org/wiki/۱۹۸۴_(رمان)"))
