@@ -1,8 +1,8 @@
 # Persian
 
-A simple Python library for Persian language localization.
+A fast, typed Python library for Persian language localization.
 
-[![Tests](https://github.com/rezakamalifard/Persian/workflows/tests/badge.svg)](https://github.com/rezakamalifard/Persian/actions)
+[![Tests](https://github.com/rezkam/persian/workflows/Tests/badge.svg)](https://github.com/rezkam/persian/actions)
 
 Python implementation of [Persian.js](https://github.com/usablica/persian.js)
 
@@ -12,73 +12,111 @@ Python implementation of [Persian.js](https://github.com/usablica/persian.js)
 pip install persian
 ```
 
-## Functions
+**Requirements:** Python 3.10 or higher
 
-### Convert to Persian characters
-
-Used for converting Arabic characters to Persian.
-
-Example:
-
-```python
-persian.convert_ar_characters("علي")  #returns: علی
+For older Python versions (3.6-3.9):
+```bash
+pip install "persian<0.6.0"
 ```
 
-### Convert to English numbers from Persian Number
-
-Used for converting Persian numbers to English.
-
-Example:
+## Quick Start
 
 ```python
-persian.convert_fa_numbers("۱۳۷۱")  #returns: 1371
+import persian
+
+persian.convert_ar_characters("علي")  # 'علی'
+persian.convert_fa_numbers("۱۳۷۱")    # '1371'
+persian.convert_en_numbers("345")     # '۳۴۵'
+persian.convert_en_characters("sghl") # 'سلام'
+persian.convert_fa_spaces("آمده ای")  # 'آمده‌ای'
+persian.decode_url("https://.../%D8%B5%D9%81%D8%AD%D9%87")  # 'https://.../صفحه'
 ```
 
-### Convert to Persian numbers from Arabic Number
+Need a one-stop helper? Use `normalize_persian("سلام ٣٤٥ می آیم")`
+to get `سلام ۳۴۵ می‌آیم`.
 
-Used for converting Arabic numbers to Persian.
+## Performance
 
-Example:
+Version 0.6.0 includes major speedups:
+
+- 3–5× faster number and keyboard conversions via `str.translate`
+- 2–3× faster spacing fixes using pre-compiled regular expressions
+- ~50% lower memory usage on large strings thanks to fewer temporary objects
+
+See [docs/PERFORMANCE.md](docs/PERFORMANCE.md) for benchmark methodology and charts.
+
+## Type Safety & Tooling
+
+The package ships with native type hints (`py.typed`) and a strict `mypy`
+configuration. Static analyzers know the exact return type of every function:
 
 ```python
-persian.convert_ar_numbers("٣٤٥")  #returns: ۳۴۵
+from persian import convert_en_numbers
+
+result: str = convert_en_numbers("123")  # ✔️ mypy is satisfied
 ```
 
-### Convert to Persian numbers from English Number
+## Error Handling
 
-Used for converting English numbers to Persian.
-
-Example:
+All public functions validate inputs and raise clear exceptions:
 
 ```python
-persian.convert_en_numbers("345")  #returns: ۳۴۵
+import persian
+
+persian.convert_en_numbers(None)  # ValueError: input_str cannot be None
+persian.convert_en_numbers(123)   # TypeError: input_str must be str, got int
 ```
 
-### Change keyboard layout
+Empty strings are accepted and return empty strings.
 
-Converting Persian char to English char by switching the keyboard layout
+## API Overview
 
-Example:
+| Category | Functions |
+| --- | --- |
+| Numbers | `convert_en_numbers`, `convert_fa_numbers`, `convert_ar_numbers` |
+| Characters | `convert_en_characters`, `convert_ar_characters`, `remove_arabic_diacritics` |
+| Spacing & URLs | `convert_fa_spaces`, `decode_url` |
+| Utilities | `normalize_persian`, `contains_persian_digits`, `contains_arabic_digits`, `is_persian_text` |
 
-```python
-persian.convert_en_characters("sghl")   #returns: سلام
-```
+A detailed description is available in [docs/API.md](docs/API.md).
 
-### Zero-width non-joiner correction
+## Migration to v0.6.0
 
-Example:
+### ⚠️ Python Version Requirement
 
-```python
-persian.convert_en_characters("آمده ای ولی من رفته ام و می آییم")   #returns: آمده‌ای ولی من رفته‌ام و می‌آییم
-```
+**Version 0.6.0 requires Python 3.10 or higher** (previously 3.6+).
 
-### Decode Percent-encoding Characters in URLs
+- Python 3.6-3.9 have all reached end-of-life
+- If you're on Python 3.6-3.9, please pin to `persian<0.6.0`
+- For Python 3.10+, v0.6.0 is a drop-in replacement with no code changes needed
 
-Example:
+### What's New
 
-```python
-persian.decode_url("https://fa.wikipedia.org/wiki/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C")   #returns: https://fa.wikipedia.org/wiki/صفحهٔ_اصلی
-```
+- Significant performance improvements (see above)
+- Full type hints and strict validation
+- Better documentation and tooling, including `pyproject.toml`
+- New helpers: normalization, detection utilities, diacritic removal
+
+### Breaking Changes
+
+- **Minimum Python version: 3.10+** (was 3.6+)
+- The public API and behavior remain fully backward compatible for supported Python versions
+
+### Deprecated Functions
+
+CamelCase helpers remain available but emit `DeprecationWarning`:
+
+- `enToPersianNumb()` → `convert_en_numbers()`
+- `enToPersianChar()` → `convert_en_characters()`
+- `arToPersianNumb()` → `convert_ar_numbers()`
+- `arToPersianChar()` → `convert_ar_characters()`
+
+## Documentation
+
+- [Performance Benchmarks](docs/PERFORMANCE.md)
+- [API Reference](docs/API.md)
+- [Changelog](docs/CHANGELOG.md)
+- [Contributing Guide](docs/CONTRIBUTING.md)
 
 ## Contributors
 
@@ -90,4 +128,4 @@ persian.decode_url("https://fa.wikipedia.org/wiki/%D8%B5%D9%81%D8%AD%D9%87%D9%94
 
 ## Contributing
 
-This is a open-source project. Fork the project, complete the code and send pull request.
+See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for setup instructions and code style rules.
