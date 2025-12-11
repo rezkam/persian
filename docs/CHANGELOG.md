@@ -3,7 +3,7 @@
 All notable changes to this project will be documented here. The project adheres
 to semantic versioning.
 
-## [0.6.0] - 2025-01-01
+## [1.0.0]
 
 ### ⚠️ Breaking Changes
 
@@ -13,7 +13,7 @@ to semantic versioning.
   - Python 3.8 reached end-of-life in October 2024
   - Python 3.9 reached end-of-life in October 2025 (3.9.25 was the final release)
   - This change was necessary to support modern type hints and align with currently supported Python versions
-  - If you must use Python 3.6-3.9, please pin to `persian<0.6.0`
+  - If you must use Python 3.6-3.9, please pin to `persian<1.0.0`
 
 ### Added
 

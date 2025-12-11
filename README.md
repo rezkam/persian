@@ -16,7 +16,7 @@ pip install persian
 
 For older Python versions (3.6-3.9):
 ```bash
-pip install "persian<0.6.0"
+pip install "persian<1.0.0"
 ```
 
 ## Quick Start
@@ -37,7 +37,7 @@ to get `سلام ۳۴۵ می‌آیم`.
 
 ## Performance
 
-Version 0.6.0 includes major speedups:
+Version 1.0.0 includes major speedups:
 
 - 3–5× faster number and keyboard conversions via `str.translate`
 - 2–3× faster spacing fixes using pre-compiled regular expressions
@@ -80,15 +80,15 @@ Empty strings are accepted and return empty strings.
 
 A detailed description is available in [docs/API.md](docs/API.md).
 
-## Migration to v0.6.0
+## Migration to v1.0.0
 
 ### ⚠️ Python Version Requirement
 
-**Version 0.6.0 requires Python 3.10 or higher** (previously 3.6+).
+**Version 1.0.0 requires Python 3.10 or higher** (previously 3.6+).
 
 - Python 3.6-3.9 have all reached end-of-life
-- If you're on Python 3.6-3.9, please pin to `persian<0.6.0`
-- For Python 3.10+, v0.6.0 is a drop-in replacement with no code changes needed
+- If you're on Python 3.6-3.9, please pin to `persian<1.0.0`
+- For Python 3.10+, v1.0.0 is a drop-in replacement with no code changes needed
 
 ### What's New
 
