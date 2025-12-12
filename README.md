@@ -14,6 +14,9 @@ pip install persian
 
 **Requirements:** Python 3.10 or higher
 
+Continuous integration runs the full suite across Python 3.10–3.14 on Linux, macOS, and Windows.  
+An additional cross-platform workflow executes against the latest Python 3.15 pre-release available on GitHub Actions (currently `3.15.0-alpha.2`, confirmed in `versions-manifest.json`) to detect upcoming compatibility issues early.
+
 For older Python versions (3.6-3.9):
 ```bash
 pip install "persian<1.0.0"
