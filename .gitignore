@@ -1,6 +1,33 @@
-.idea
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
 build/
 dist/
-*.pyc
-*.pyo
-/*.egg-info
+*.egg-info/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Virtual environments
+venv/
+env/
+ENV/

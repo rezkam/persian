@@ -1,38 +1,36 @@
-# encoding: utf-8
+from __future__ import annotations
 
-"""
-Persian
-Simple tool for Persian language localization in Python
-Copyright (C) 2017-2020 Reza Kamalifard (mrkamalifard@gmail.com) and others
-@rezakamalifard
-MIT licensed
-https://github.com/itmard/Persian
-
-These functions will be deprecated on version 0.6.0
-
-"""
+"""Backward compatible wrappers for deprecated helper names."""
 
 import warnings
 
-from .persian import (convert_en_numbers, convert_en_characters,
-                      convert_ar_numbers, convert_ar_characters)
+from .core import (
+    convert_ar_characters,
+    convert_ar_numbers,
+    convert_en_characters,
+    convert_en_numbers,
+)
 
 
-def enToPersianNumb(input_str):
-    warnings.warn("deprecated use convert_en_numbers", DeprecationWarning)
+def enToPersianNumb(input_str: str) -> str:
+    """Deprecated wrapper for convert_en_numbers."""
+    warnings.warn("deprecated use convert_en_numbers", DeprecationWarning, stacklevel=2)
     return convert_en_numbers(input_str)
 
 
-def enToPersianChar(input_str):
-    warnings.warn("deprecated use convert_en_characters", DeprecationWarning)
+def enToPersianChar(input_str: str) -> str:
+    """Deprecated wrapper for convert_en_characters."""
+    warnings.warn("deprecated use convert_en_characters", DeprecationWarning, stacklevel=2)
     return convert_en_characters(input_str)
 
 
-def arToPersianNumb(input_str):
-    warnings.warn("deprecated use convert_ar_numbers", DeprecationWarning)
+def arToPersianNumb(input_str: str) -> str:
+    """Deprecated wrapper for convert_ar_numbers."""
+    warnings.warn("deprecated use convert_ar_numbers", DeprecationWarning, stacklevel=2)
     return convert_ar_numbers(input_str)
 
 
-def arToPersianChar(input_str):
-    warnings.warn("deprecated use convert_ar_characters", DeprecationWarning)
+def arToPersianChar(input_str: str) -> str:
+    """Deprecated wrapper for convert_ar_characters."""
+    warnings.warn("deprecated use convert_ar_characters", DeprecationWarning, stacklevel=2)
     return convert_ar_characters(input_str)
