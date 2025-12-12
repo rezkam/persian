@@ -34,7 +34,7 @@ how to get started and the quality expectations for contributions.
 - Use descriptive commit messages referencing issues when available.
 - Update `docs/CHANGELOG.md` with a short entry under the “Unreleased” heading.
 - Document user-facing changes in `README.md` if needed.
-- Ensure CI passes for all supported Python versions (3.8 – 3.12).
+- Ensure CI passes for all supported Python versions (stable 3.10 – 3.14) and the dedicated Python 3.15 pre-release job (currently `3.15.0-alpha.2` on GitHub Actions).
 
 ## Reporting Bugs
 
