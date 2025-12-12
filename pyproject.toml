@@ -10,10 +10,10 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [
-    { name = "Reza Kamalifard", email = "mrkamalifard@gmail.com" },
+    { name = "Reza Kamali", email = "hi@rez.nu" },
 ]
 maintainers = [
-    { name = "Reza Kamalifard", email = "mrkamalifard@gmail.com" },
+    { name = "Reza Kamali", email = "hi@rez.nu" },
 ]
 keywords = [
     "persian",
