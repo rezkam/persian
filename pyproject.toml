@@ -82,10 +82,12 @@ version_file = "persian/_version.py"
 [tool.black]
 line-length = 100
 target-version = ["py310", "py311", "py312", "py313"]
+extend-exclude = "_version.py"
 
 [tool.ruff]
 line-length = 100
 target-version = "py310"
+extend-exclude = ["_version.py"]
 
 [tool.ruff.lint]
 select = [
@@ -109,6 +111,7 @@ ignore = [
 [tool.isort]
 profile = "black"
 line_length = 100
+extend_skip = ["_version.py"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
