@@ -4,8 +4,6 @@ A fast, typed Python library for Persian language localization.
 
 [![Tests](https://github.com/rezkam/persian/workflows/Tests/badge.svg)](https://github.com/rezkam/persian/actions)
 
-Python implementation of [Persian.js](https://github.com/usablica/persian.js)
-
 ## Installation
 
 ```bash
