@@ -1,5 +1,11 @@
 .PHONY: help install install-docs test lint format type-check clean build docs docs-clean
 
+# Sphinx documentation variables
+SPHINXOPTS    ?=
+SPHINXBUILD   ?= sphinx-build
+SOURCEDIR     = docs/sphinx
+BUILDDIR      = docs/sphinx/_build
+
 help:
 	@echo "Available commands:"
 	@echo "  install       Install package and dev dependencies"
@@ -39,14 +45,15 @@ clean:
 	find . -type d -name __pycache__ -exec rm -rf {} +
 	find . -type f -name "*.pyc" -delete
 	find . -type f -name ".DS_Store" -delete
+	@$(SPHINXBUILD) -M clean "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
 
 build: clean
 	python -m build
 
 docs:
 	@echo "Building documentation..."
-	cd docs/sphinx && $(MAKE) html
+	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
 	@echo "Documentation built! Open docs/sphinx/_build/html/index.html"
 
 docs-clean:
-	cd docs/sphinx && $(MAKE) clean
+	@$(SPHINXBUILD) -M clean "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
