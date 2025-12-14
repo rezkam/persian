@@ -26,14 +26,10 @@ jobs:
         pip install -e ".[docs]"
 
     - name: Build documentation
-      run: |
-        cd docs/sphinx
-        make html
+      run: make docs
 
     - name: Check for broken links (optional)
-      run: |
-        cd docs/sphinx
-        make linkcheck
+      run: make docs-linkcheck
       continue-on-error: true
 
     - name: Upload docs artifact
