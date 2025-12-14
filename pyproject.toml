@@ -73,7 +73,7 @@ Homepage = "https://github.com/rezkam/persian"
 Documentation = "https://persian.readthedocs.io"
 Repository = "https://github.com/rezkam/persian"
 Issues = "https://github.com/rezkam/persian/issues"
-Changelog = "https://persian.readthedocs.io/en/latest/changelog.html"
+Changelog = "https://github.com/rezkam/persian/releases"
 
 [tool.setuptools]
 packages = ["persian"]

@@ -95,7 +95,6 @@ Contents
 
    migration
    contributing
-   changelog
 
 Indices and tables
 ==================
