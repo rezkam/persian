@@ -1,4 +1,4 @@
-.PHONY: help install install-docs setup-hooks test lint format type-check clean build docs docs-clean
+.PHONY: help install install-docs setup-hooks test lint format type-check clean build docs
 
 # Sphinx documentation variables
 SPHINXOPTS    ?=
@@ -16,8 +16,7 @@ help:
 	@echo "  format        Format code (black, isort)"
 	@echo "  type-check    Run type checker (mypy)"
 	@echo "  docs          Build documentation"
-	@echo "  docs-clean    Clean documentation build artifacts"
-	@echo "  clean         Remove build artifacts"
+	@echo "  clean         Remove all build and documentation artifacts"
 	@echo "  build         Build distribution packages"
 
 install:
@@ -59,6 +58,3 @@ docs:
 	@echo "Building documentation..."
 	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
 	@echo "Documentation built! Open docs/sphinx/_build/html/index.html"
-
-docs-clean:
-	@$(SPHINXBUILD) -M clean "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
