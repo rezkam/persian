@@ -1,9 +1,8 @@
-from __future__ import annotations
-
 """Core Persian language processing utilities."""
 
+from __future__ import annotations
+
 import urllib.parse
-from typing import Tuple
 
 from .constants import (
     AR_DIACRITIC_REMOVAL_TABLE,
@@ -19,7 +18,7 @@ from .constants import (
     MI_PATTERN,
 )
 
-MappingType = Tuple[Tuple[str, str], ...]
+MappingType = tuple[tuple[str, str], ...]
 
 
 def _validate_string_input(input_str: str, param_name: str = "input_str") -> None:

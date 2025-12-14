@@ -1,6 +1,6 @@
-from __future__ import annotations
-
 """Public API exports for the Persian package."""
+
+from __future__ import annotations
 
 from .core import (
     contains_arabic_digits,
@@ -20,6 +20,12 @@ from .core import (
 # Deprecated helpers are still importable for backward compatibility
 from .deprecation import *  # noqa: F401,F403
 
+# Version info
+try:
+    from ._version import version as __version__
+except ImportError:
+    __version__ = "dev"
+
 __all__ = [
     "convert_en_numbers",
     "convert_en_characters",
@@ -33,4 +39,5 @@ __all__ = [
     "contains_arabic_digits",
     "is_persian_text",
     "remove_arabic_diacritics",
+    "__version__",
 ]

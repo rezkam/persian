@@ -1,6 +1,6 @@
 # Persian
 
-A fast, typed Python library for Persian language localization.
+A fast Python toolkit for Persian (Farsi) text normalization, number/character conversion, and localization utilities.
 
 [![Tests](https://github.com/rezkam/persian/workflows/Tests/badge.svg)](https://github.com/rezkam/persian/actions)
 

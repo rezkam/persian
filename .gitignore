@@ -40,3 +40,8 @@ ENV/
 
 # Claude artifacts
 .claude/
+
+# Sphinx documentation
+docs/sphinx/_build/
+docs/sphinx/_static/
+docs/sphinx/_templates/

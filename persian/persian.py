@@ -1,11 +1,11 @@
-from __future__ import annotations
-
 """Legacy module maintained for backwards compatibility.
 
 Historically, consumers imported helpers via ``import persian.persian``.
 This shim simply re-exports the new core implementations so the older
 import path continues to function without modification.
 """
+
+from __future__ import annotations
 
 from .core import (
     contains_arabic_digits,

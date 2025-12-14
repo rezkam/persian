@@ -1,6 +1,6 @@
-from __future__ import annotations
-
 """Constants for Persian language processing utilities."""
+
+from __future__ import annotations
 
 import re
 from typing import Final

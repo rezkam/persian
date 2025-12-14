@@ -1,6 +1,6 @@
-from __future__ import annotations
-
 """Backward compatible wrappers for deprecated helper names."""
+
+from __future__ import annotations
 
 import warnings
 
