@@ -1,4 +1,4 @@
-.PHONY: help install install-docs test lint format type-check clean build docs docs-clean
+.PHONY: help install install-docs setup-hooks test lint format type-check clean build docs docs-clean
 
 # Sphinx documentation variables
 SPHINXOPTS    ?=
@@ -10,6 +10,7 @@ help:
 	@echo "Available commands:"
 	@echo "  install       Install package and dev dependencies"
 	@echo "  install-docs  Install documentation dependencies"
+	@echo "  setup-hooks   Configure git to use .githooks directory"
 	@echo "  test          Run tests with coverage"
 	@echo "  lint          Run linters (flake8)"
 	@echo "  format        Format code (black, isort)"
@@ -24,6 +25,10 @@ install:
 
 install-docs:
 	pip install -e ".[docs]"
+
+setup-hooks:
+	git config core.hooksPath .githooks
+	@echo "Git hooks configured! Hooks in .githooks/ will now run automatically."
 
 test:
 	pytest
