@@ -13,24 +13,20 @@ formats:
   - pdf
   - epub
 
-# Python configuration
-python:
-  install:
-    - method: pip
-      path: .
-      extra_requirements:
-        - docs
-
 # Build configuration
 build:
   os: ubuntu-24.04
   tools:
     python: "3.13"
   jobs:
-    pre_install:
-      # Install git for setuptools-scm to detect version
+    pre_create_environment:
+      # Fetch full git history for setuptools-scm
       - git fetch --unshallow || true
-    post_build:
-      - echo "Documentation built successfully!"
-      - echo "Version:"
-      - python -c "import persian; print(persian.__version__)"
+      # Install uv via asdf
+      - asdf plugin add uv
+      - asdf install uv latest
+      - asdf global uv latest
+    create_environment:
+      - uv venv "${READTHEDOCS_VIRTUALENV_PATH}"
+    install:
+      - UV_PROJECT_ENVIRONMENT="${READTHEDOCS_VIRTUALENV_PATH}" uv sync --frozen --extra docs

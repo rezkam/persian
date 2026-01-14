@@ -1,26 +1,6 @@
 Installation
 ============
 
-Requirements
-------------
-
-* **Python 3.10 or higher**
-* No external runtime dependencies
-
-Supported Python Versions
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Persian library officially supports:
-
-* Python 3.10
-* Python 3.11
-* Python 3.12
-* Python 3.13
-* Python 3.14
-* Python 3.15
-
-All versions are continuously tested on Linux, macOS, and Windows.
-
 Install from PyPI
 -----------------
 
@@ -41,26 +21,6 @@ To upgrade to the latest version:
 
    pip install --upgrade persian
 
-Install a Specific Version
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To install a specific version:
-
-.. code-block:: bash
-
-   pip install persian==1.0.0
-
-For Older Python Versions
---------------------------
-
-If you're using Python 3.6-3.9 (which have reached end-of-life), you can install the legacy version:
-
-.. code-block:: bash
-
-   pip install "persian<1.0.0"
-
-**Note**: We strongly recommend upgrading to Python 3.10+ to receive the latest features, performance improvements, and security updates.
-
 Install from Source
 -------------------
 
@@ -74,16 +34,16 @@ Clone the Repository
    git clone https://github.com/rezkam/persian.git
    cd persian
 
-Create a Virtual Environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Install in Development Mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Using uv (recommended):
 
 .. code-block:: bash
 
-   python -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   uv sync --extra dev
 
-Install in Development Mode
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using pip:
 
 .. code-block:: bash
 
@@ -94,16 +54,21 @@ This installs the package in editable mode with development dependencies includi
 * pytest (testing)
 * pytest-cov (coverage)
 * pytest-benchmark (performance testing)
-* mypy (type checking)
-* black (code formatting)
-* ruff (linting)
-* flake8 (style checking)
-* isort (import sorting)
+* ty (type checking)
+* ruff (linting and formatting)
 
 Install Documentation Dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To build the documentation locally:
+
+Using uv:
+
+.. code-block:: bash
+
+   uv sync --extra docs
+
+Using pip:
 
 .. code-block:: bash
 
@@ -134,7 +99,7 @@ To check the installed version:
 
    import persian
    # Check if package is properly installed
-   print(persian.__version__)  # Should print: 1.0.0
+   print(persian.__version__)
 
 Virtual Environments
 --------------------
@@ -164,7 +129,7 @@ Using conda
 .. code-block:: bash
 
    # Create conda environment
-   conda create -n myenv python=3.12
+   conda create -n myenv python
 
    # Activate environment
    conda activate myenv

@@ -17,36 +17,29 @@ Why Use Persian?
 ----------------
 
 **Performance**
-  Version 1.0.0 includes major performance improvements:
+  Optimized for speed:
 
-  * 3-5× faster number and character conversions using ``str.translate``
-  * 2-3× faster spacing fixes with pre-compiled regex patterns
-  * ~50% lower memory usage on large strings
+  * Fast number and character conversions using ``str.translate``
+  * Pre-compiled regex patterns for spacing fixes
+  * Low memory usage on large strings
 
 **Type Safety**
-  Ships with native type hints (``py.typed``) and strict ``mypy`` configuration:
+  Ships with native type hints (``py.typed``) and strict type checking:
 
   .. code-block:: python
 
      from persian import convert_en_numbers
 
-     result: str = convert_en_numbers("123")  # ✔️ mypy is satisfied
+     result: str = convert_en_numbers("123")  # ✔️ type checker is satisfied
 
 **Modern Python**
-  Requires Python 3.10+ with full support through Python 3.15, including:
-
-  * Modern syntax and features
-  * Comprehensive type annotations
-  * Excellent IDE support
+  Modern syntax, comprehensive type annotations, and excellent IDE support
 
 **Zero Dependencies**
   No external runtime dependencies - just pure Python stdlib
 
 **Well-Tested**
-  Extensive test coverage with pytest and continuous integration across:
-
-  * Python 3.10, 3.11, 3.12, 3.13, 3.14, 3.15
-  * Linux, macOS, and Windows
+  Extensive test coverage with pytest and continuous integration across multiple Python versions on Linux, macOS, and Windows
 
 Use Cases
 ---------

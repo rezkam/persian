@@ -10,6 +10,7 @@ Prerequisites
 ~~~~~~~~~~~~~
 
 * Python 3.10 or higher
+* `uv <https://docs.astral.sh/uv/>`_ (modern Python package manager)
 * Git
 * Familiarity with pytest for testing
 * Understanding of Persian language processing
@@ -26,25 +27,34 @@ Setting Up Development Environment
       git clone https://github.com/YOUR_USERNAME/persian.git
       cd persian
 
-3. **Create a virtual environment**:
+3. **Install uv** (if not already installed):
 
    .. code-block:: bash
 
-      python -m venv .venv
-      source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+      # macOS/Linux
+      curl -LsSf https://astral.sh/uv/install.sh | sh
+
+      # Windows
+      powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 
 4. **Install development dependencies**:
 
    .. code-block:: bash
 
-      pip install -e ".[dev]"
+      uv sync --extra dev
 
-5. **Verify installation**:
+5. **Set up pre-commit hooks** (optional but recommended):
 
    .. code-block:: bash
 
-      python -m pytest
-      mypy persian
+      make setup-hooks
+
+6. **Verify installation**:
+
+   .. code-block:: bash
+
+      make test
+      make type-check
 
 Development Workflow
 --------------------
@@ -63,51 +73,41 @@ Always create a new branch for your work:
 Code Style
 ~~~~~~~~~~
 
-We use multiple tools to maintain code quality:
+We use **Ruff** for both linting and formatting, providing a fast, unified tool for code quality:
 
-**Black** (code formatting):
-
-.. code-block:: bash
-
-   black persian tests
-
-**Ruff** (linting):
+**Format code**:
 
 .. code-block:: bash
 
-   ruff check persian tests
+   make format
+   # Or directly:
+   uv run ruff format persian tests
+   uv run ruff check --fix persian tests
 
-**isort** (import sorting):
-
-.. code-block:: bash
-
-   isort persian tests
-
-**Flake8** (style checking):
+**Check linting**:
 
 .. code-block:: bash
 
-   flake8 persian tests
+   make lint
+   # Or directly:
+   uv run ruff check persian tests
 
-**Run all checks**:
+**Run all checks** (lint, format check, type check):
 
 .. code-block:: bash
 
-   make lint  # If using Makefile
-   # Or manually:
-   black persian tests && \
-   ruff check persian tests && \
-   isort persian tests && \
-   flake8 persian tests
+   make check
 
 Type Checking
 ~~~~~~~~~~~~~
 
-All code must pass mypy type checking:
+All code must pass ty type checking:
 
 .. code-block:: bash
 
-   mypy persian
+   make type-check
+   # Or directly:
+   uv run ty check persian
 
 Add type hints to all functions:
 
@@ -127,9 +127,8 @@ All new features and bug fixes must include tests.
 .. code-block:: text
 
    tests/
-   ├── test_core.py
-   ├── test_utilities.py
-   └── test_deprecation.py
+   ├── test_persian.py
+   └── test_performance.py
 
 **Write a test**:
 
@@ -156,13 +155,12 @@ All new features and bug fixes must include tests.
 .. code-block:: bash
 
    # Run all tests
-   pytest
-
-   # Run with coverage
-   pytest --cov=persian --cov-report=html
+   make test
+   # Or directly:
+   uv run pytest
 
    # Run specific test
-   pytest tests/test_core.py::test_convert_en_numbers
+   uv run pytest tests/test_persian.py::test_convert_en_numbers
 
 Documentation
 ~~~~~~~~~~~~~
@@ -199,8 +197,8 @@ Update documentation for any changes:
 
    .. code-block:: bash
 
-      cd docs/sphinx
-      make html
+      make install-docs  # Install docs dependencies
+      make docs
       # View at docs/sphinx/_build/html/index.html
 
 Committing Changes
@@ -246,9 +244,10 @@ Pre-commit Checklist
 
 Before committing, ensure:
 
-- [ ] Code follows style guidelines (Black, Ruff, isort)
-- [ ] All tests pass (``pytest``)
-- [ ] Type checking passes (``mypy persian``)
+- [ ] Code follows style guidelines (``make format``)
+- [ ] All linting passes (``make lint``)
+- [ ] All tests pass (``make test``)
+- [ ] Type checking passes (``make type-check``)
 - [ ] Coverage doesn't decrease
 - [ ] Documentation is updated
 - [ ] Commit message is clear
@@ -354,14 +353,11 @@ Running the Full Test Suite
 
 .. code-block:: bash
 
-   # Run all tests
-   pytest
-
-   # With coverage report
-   pytest --cov=persian --cov-report=html --cov-report=term
+   # Run all tests with coverage
+   make test
 
    # Run benchmarks
-   pytest tests/test_benchmark.py --benchmark-only
+   uv run pytest tests/test_performance.py --benchmark-only
 
 Writing Good Tests
 ~~~~~~~~~~~~~~~~~~
@@ -418,11 +414,9 @@ Release Process
 For Maintainers
 ~~~~~~~~~~~~~~~
 
-1. Update version in ``pyproject.toml``
-2. Update ``CHANGELOG.md``
-3. Create release tag
-4. Build and upload to PyPI
-5. Create GitHub release
+1. Create release tag (version auto-detected by setuptools-scm)
+2. GitHub Actions will automatically build and publish to PyPI
+3. Create GitHub release with changelog
 
 Resources
 ---------

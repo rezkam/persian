@@ -10,9 +10,9 @@ STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\.py$' ||
 if [ -n "$STAGED_FILES" ]; then
     echo "Formatting staged Python files..."
 
-    # Run formatters on staged files
-    black $STAGED_FILES
-    isort $STAGED_FILES
+    # Run ruff formatter and linter with auto-fix on staged files
+    uv run ruff format $STAGED_FILES
+    uv run ruff check --fix $STAGED_FILES
 
     # Re-add formatted files to staging
     git add $STAGED_FILES

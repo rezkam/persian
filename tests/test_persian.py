@@ -67,8 +67,7 @@ class TestSpacingAndUrl(unittest.TestCase):
 
     def test_decode_url(self):
         encoded_url = (
-            "https://fa.wikipedia.org/wiki/"
-            "%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C"
+            "https://fa.wikipedia.org/wiki/%D8%B5%D9%81%D8%AD%D9%87%D9%94_%D8%A7%D8%B5%D9%84%DB%8C"
         )
         self.assertEqual(
             "https://fa.wikipedia.org/wiki/صفحهٔ_اصلی",

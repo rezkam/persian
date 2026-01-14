@@ -10,16 +10,6 @@ A fast Python toolkit for Persian (Farsi) text normalization, number/character c
 pip install persian
 ```
 
-**Requirements:** Python 3.10 or higher
-
-Continuous integration runs the full suite across Python 3.10–3.14 on Linux, macOS, and Windows.  
-An additional cross-platform workflow executes against the latest Python 3.15 pre-release available on GitHub Actions (currently `3.15.0-alpha.2`, confirmed in `versions-manifest.json`) to detect upcoming compatibility issues early.
-
-For older Python versions (3.6-3.9):
-```bash
-pip install "persian<1.0.0"
-```
-
 ## Quick Start
 
 ```python
@@ -48,13 +38,13 @@ See [docs/PERFORMANCE.md](docs/PERFORMANCE.md) for benchmark methodology and cha
 
 ## Type Safety & Tooling
 
-The package ships with native type hints (`py.typed`) and a strict `mypy`
-configuration. Static analyzers know the exact return type of every function:
+The package ships with native type hints (`py.typed`) and strict type checking.
+Static analyzers know the exact return type of every function:
 
 ```python
 from persian import convert_en_numbers
 
-result: str = convert_en_numbers("123")  # ✔️ mypy is satisfied
+result: str = convert_en_numbers("123")  # ✔️ type checker is satisfied
 ```
 
 ## Error Handling
@@ -81,29 +71,7 @@ Empty strings are accepted and return empty strings.
 
 A detailed description is available in [docs/API.md](docs/API.md).
 
-## Migration to v1.0.0
-
-### ⚠️ Python Version Requirement
-
-**Version 1.0.0 requires Python 3.10 or higher** (previously 3.6+).
-
-- Python 3.6-3.9 have all reached end-of-life
-- If you're on Python 3.6-3.9, please pin to `persian<1.0.0`
-- For Python 3.10+, v1.0.0 is a drop-in replacement with no code changes needed
-
-### What's New
-
-- Significant performance improvements (see above)
-- Full type hints and strict validation
-- Better documentation and tooling, including `pyproject.toml`
-- New helpers: normalization, detection utilities, diacritic removal
-
-### Breaking Changes
-
-- **Minimum Python version: 3.10+** (was 3.6+)
-- The public API and behavior remain fully backward compatible for supported Python versions
-
-### Deprecated Functions
+## Deprecated Functions
 
 CamelCase helpers remain available but emit `DeprecationWarning`:
 

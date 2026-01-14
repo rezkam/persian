@@ -293,16 +293,16 @@ def remove_arabic_diacritics(input_str: str) -> str:
 
 
 __all__ = [
-    "convert_en_numbers",
-    "convert_en_characters",
-    "convert_ar_numbers",
-    "convert_fa_numbers",
+    "contains_arabic_digits",
+    "contains_persian_digits",
     "convert_ar_characters",
+    "convert_ar_numbers",
+    "convert_en_characters",
+    "convert_en_numbers",
+    "convert_fa_numbers",
     "convert_fa_spaces",
     "decode_url",
-    "normalize_persian",
-    "contains_persian_digits",
-    "contains_arabic_digits",
     "is_persian_text",
+    "normalize_persian",
     "remove_arabic_diacritics",
 ]

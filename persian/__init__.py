@@ -18,7 +18,7 @@ from .core import (
 )
 
 # Deprecated helpers are still importable for backward compatibility
-from .deprecation import *  # noqa: F401,F403
+from .deprecation import *
 
 # Version info
 try:
@@ -27,17 +27,17 @@ except ImportError:
     __version__ = "dev"
 
 __all__ = [
-    "convert_en_numbers",
-    "convert_en_characters",
-    "convert_ar_numbers",
-    "convert_fa_numbers",
+    "__version__",
+    "contains_arabic_digits",
+    "contains_persian_digits",
     "convert_ar_characters",
+    "convert_ar_numbers",
+    "convert_en_characters",
+    "convert_en_numbers",
+    "convert_fa_numbers",
     "convert_fa_spaces",
     "decode_url",
-    "normalize_persian",
-    "contains_persian_digits",
-    "contains_arabic_digits",
     "is_persian_text",
+    "normalize_persian",
     "remove_arabic_diacritics",
-    "__version__",
 ]
